@@ -4,7 +4,7 @@ This project can reproduce the race condition when MyBatis builds `mappedStateme
 
 1. Set a breakpoint on line 709 of `HashMap`(Oracle JDK 1.8.0_321), and set the breakpoint pause mode to `Thread`, and set the breakpoint condition to: `this.getClass().getName().equals("org.apache.ibatis.session.Configuration$StrictMap")`.
 2. Start `me.tianshuang.MybatisRaceConditionApplication` in debug mode.
-3. Whenever a breakpoint is reached, hit `Resume Program` and watch the console output, because `table` does not contain the `volatile` modifier, other threads may not be able to see the latest `table` in real time, so we may need hit `Resume Program` multiple times, but when other threads access the latest `table` and the migration of elements in the `oldTab` has not yet completed, `org.apache.ibatis.session.Configuration.StrictMap#get` will throw `java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for me.tianshuang.mapper.Mapper1.select1`.
+3. Whenever a breakpoint is reached, hit `Resume Program` and watch the console output, because `table` does not contain the `volatile` modifier, other threads may not be able to see the latest `table` in real time, so we may need hit `Resume Program` multiple times, and when other threads access the latest `table` and the migration of elements in the `oldTab` has not yet completed, `org.apache.ibatis.session.Configuration.StrictMap#get` will throw `java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for me.tianshuang.mapper.Mapper1.select1`.
 
 
 Example of breakpoint setting:
