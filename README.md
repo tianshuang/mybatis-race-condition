@@ -9,11 +9,11 @@ This project can reproduce the race condition when MyBatis builds `mappedStateme
 
 Example of breakpoint setting:
 
-![resize-breakpoint-1](https://storage.tianshuang.me/2022/10/resize-breakpoint-1.jpg)
+![resize-breakpoint](https://storage.tianshuang.me/2022/10/resize-breakpoint.jpg)
 
 Breakpoint detail:
 
-![resize-breakpoint-2](https://storage.tianshuang.me/2022/10/resize-breakpoint-2.jpg)
+![resize-breakpoint-detail](https://storage.tianshuang.me/2022/10/resize-breakpoint-detail.jpg)
 
 
 The exception information caused by race condition is as follows:
