@@ -19,19 +19,19 @@ Breakpoint detail:
 The exception information caused by race condition is as follows:
 
 ```text
-current i: 4303256
+Number of successful calls before application ready: 1028910
 org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for me.tianshuang.mapper.Mapper1.select1
 ### Cause: java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for me.tianshuang.mapper.Mapper1.select1
 	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:96)
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
-	at com.sun.proxy.$Proxy47.selectOne(Unknown Source)
+	at com.sun.proxy.$Proxy48.selectOne(Unknown Source)
 	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
 	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
 	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:145)
 	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
-	at com.sun.proxy.$Proxy50.select1(Unknown Source)
-	at me.tianshuang.MybatisRaceConditionApplication.lambda$raceConditionTest$0(MybatisRaceConditionApplication.java:25)
+	at com.sun.proxy.$Proxy51.select1(Unknown Source)
+	at me.tianshuang.MybatisRaceConditionApplication.lambda$raceConditionTest$0(MybatisRaceConditionApplication.java:32)
 	at java.lang.Thread.run(Thread.java:750)
 Caused by: org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for me.tianshuang.mapper.Mapper1.select1
